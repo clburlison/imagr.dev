@@ -46,6 +46,7 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 1. Make sure and install or upgrade the 'helper' application from the bottom of your NBICreator window if the message appears. 
 
 1. On the "Configuration URL" set this to your `http://VM_IP_Address/imagr_config.plist`. Place created nbi inside of `web_root`.
+
   ![NBICreator_URL](./pics/NBICreator_URL.png)
 
 1. Modify your `imagr_config.plist` to use your VM's IP Adress. Also, change the name of your image to match the output from your AutoDMG created image. 
