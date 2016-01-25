@@ -28,7 +28,7 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 1. Copy files from `sample` directory to `web_root` 
 1. Follow the yellow brick road below
 
-**Note:** the `adminUser.pkg` username and password are both "admin" 
+  **Note:** the `adminUser.pkg` username and password are both "admin" 
 
 1. Start our docker machine 
 
