@@ -36,7 +36,7 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
   $ ./wrapper.sh create
   ```
 
-Keep track of your Virtual Machine's IP address. You'll need to modify your `imagr_config.plist` to match this IP.
+  Keep track of your Virtual Machine's IP address. You'll need to modify your `imagr_config.plist` to match this IP.
 
 1. Start our docker containers
 
