@@ -43,7 +43,19 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 
   ![NBICreator_URL](./pics/NBICreator_URL.png)
 
-1. Modify your `imagr_config.plist` to use your VM's IP Adress. Also, change the name of your image to match the output from your AutoDMG created image. 
+1. Modify your `imagr_config.plist` to use your VM's IP Adress. Also, change the name of your image component to match the output from your AutoDMG image. 
+
+  ```xml
+  <key>components</key>
+  <array>
+    <dict>
+      <key>type</key>
+      <string>image</string>
+      <key>url</key>
+      <string>http://172.16.96.158/osx_updated_151213-10.11.2-15C50.hfs.dmg</string>
+    </dict>
+    ```
+  
 1. Start our docker containers
 
   ```bash
