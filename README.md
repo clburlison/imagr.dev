@@ -26,7 +26,7 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 1. Create an image using AutoDMG. Place created dmg inside of `web_root`
 1. Copy files from `sample` directory to `web_root` 
 
-  **Note:** the `adminUser.pkg` username and password are both "admin" 
+  **Note:** the `adminUser.pkg`'s username and password are both "admin" 
 
 1. Start our docker machine 
 
@@ -36,12 +36,6 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 
   Keep track of your Virtual Machine's IP address. You'll need to modify your `imagr_config.plist` to match this IP.
 
-1. Start our docker containers
-
-  ```bash
-  $ ./wrapper.sh start
-  ```
-
 1. Create an Imagr NBI using NBICrator. 
 1. Make sure and install or upgrade the 'helper' application from the bottom of your NBICreator window if the message appears. 
 
@@ -50,6 +44,11 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
   ![NBICreator_URL](./pics/NBICreator_URL.png)
 
 1. Modify your `imagr_config.plist` to use your VM's IP Adress. Also, change the name of your image to match the output from your AutoDMG created image. 
+1. Start our docker containers
+
+  ```bash
+  $ ./wrapper.sh start
+  ```
 
 #Stop
 
