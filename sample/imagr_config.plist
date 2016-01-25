@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>workflows</key>
+    <array>
+      <dict>
+        <key>name</key>
+        <string>10.11 Base Image</string>
+        <key>restart_action</key>
+        <string>restart</string>
+        <key>description</key>
+        <string>Deploys a 10.11.2 base image created by AutoDMG.
+Also, installs our admin account and disables setup assistant.
+        </string>
+        <key>components</key>
+        <array>
+          <dict>
+            <key>type</key>
+            <string>image</string>
+            <key>url</key>
+            <string>http://172.16.96.158/osx_updated_151213-10.11.2-15C50.hfs.dmg</string>
+          </dict>
+          <dict>
+            <key>type</key>
+            <string>included_workflow</string>
+            <key>name</key>
+            <string>base_pkgs</string>
+          </dict>
+          <dict>
+            <key>type</key>
+            <string>computer_name</string>
+          </dict>
+        </array>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>base_pkgs</string>
+        <key>hidden</key>
+        <true/>
+        <key>description</key>
+        <string>This is a hidden workflow that includes our admin account and the disable setup assistant.</string>
+        <key>components</key>
+        <array>
+          <dict>
+            <key>type</key>
+            <string>package</string>
+            <key>url</key>
+            <string>http://172.16.96.158/create_techsupport_999-5.0.pkg</string>
+            <key>first_boot</key>
+            <false/>
+          </dict>
+          <dict>
+            <key>type</key>
+            <string>package</string>
+            <key>url</key>
+            <string>http://172.16.96.158/clearReg.pkg</string>
+            <key>first_boot</key>
+            <false/>
+          </dict>
+        </array>
+      </dict>
+    </array>
+  </dict>
+</plist>

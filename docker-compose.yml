@@ -1,0 +1,28 @@
+web:
+  image: macadmins/netboot-httpd
+  ports:
+    - 80:80
+  command: nginx -g "daemon off;"
+  volumes:
+    - ${DATA_DIR}:/nbi
+  restart: always
+tftpd:
+  image: macadmins/tftpd
+  ports:
+    - 0.0.0.0:69:69/udp
+  command: /usr/sbin/in.tftpd --listen --foreground --verbosity=10 --user user -B 1468 /nbi
+  volumes:
+    - ${DATA_DIR}:/nbi
+  restart: always
+bsdpy:
+  image: bruienne/bsdpy:1.0
+  ports:
+    - 0.0.0.0:67:67/udp
+  command: /start.sh
+  volumes:
+    - ${DATA_DIR}:/nbi
+  environment:
+    BSDPY_IFACE: eth0
+    BSDPY_NBI_URL: http://${IP}
+    BSDPY_IP: ${IP}
+  restart: always
