@@ -36,7 +36,7 @@ Git Clone this repo to some directory under /Users/$username. (This is a limitat
 
   Keep track of your Virtual Machine's IP address. You'll need to modify your `imagr_config.plist` to match this IP.
 
-1. Create an Imagr NBI using NBICrator. 
+1. Create an Imagr NBI using NBICreator. 
 1. Make sure and install or upgrade the 'helper' application from the bottom of your NBICreator window if the message appears. 
 
 1. On the "Configuration URL" set this to your `http://VM_IP_Address/imagr_config.plist`. Place created nbi inside of `web_root`.
