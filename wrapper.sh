@@ -7,6 +7,8 @@ VMNAME="imagr"
 VMDISKSIZE="500000"
 VMMEM="2048"
 VMCPU="2"
+# BRIDGED_IP="10.11.11.17"
+# USE_BRIDGED=False
 
 #################################################################################
 # End user of variables - Functions be below
@@ -21,9 +23,15 @@ NC='\033[0m'
 ldock() {
   eval "$(docker-machine env ${VMNAME})"
   eval DATA_DIR=`pwd`/web_root
-  eval IP=$(docker-machine ip ${VMNAME})
+  if [[ ${USE_BRIDGED} = true ]] ; then
+      msg "Using bridged IP address: ${BRIDGED_IP}" 
+      eval IP=${BRIDGED_IP}
+      export IP=${BRIDGED_IP} 
+  else
+      eval IP=$(docker-machine ip ${VMNAME})
+      export IP=$(docker-machine ip ${VMNAME})
+  fi
   export DATA_DIR=`pwd`/web_root
-  export IP=$(docker-machine ip ${VMNAME})
 }
 
 msg() {
@@ -32,6 +40,16 @@ msg() {
 
 error() {
   printf "${RED}$1 \n${NC}"
+}
+
+# Work in progress
+getBridgeAdapterIP() {
+  msg "work in progress"
+}
+
+# Work in progress
+createBridgedAdpater() {
+  msg "work in progress"
 }
 
 check() {
@@ -114,7 +132,7 @@ restart() {
   msg "${DATA_DIR}"
   
   docker-compose stop
-  docker-compose rm
+  docker-compose rm -f
   docker-compose up -d
   wait
 }
