@@ -114,7 +114,7 @@ restart() {
   msg "${DATA_DIR}"
   
   docker-compose stop
-  docker-compose rm
+  docker-compose rm -f
   docker-compose up -d
   wait
 }
